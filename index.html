@@ -3,11 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0a0a0e">
-<meta name="description" content="Иван Холин — врач с 20-летним стажем, методолог, разработчик медицинских LLM-инструментов. Формализация клинических знаний в алгоритмы, аудит медицинской документации, техническая документация для медтеха.">
-<meta name="author" content="Холин Иван Алексеевич (VanXo)">
-<meta name="urn" content="urn:vanxo:artifact:stomvrn-site:v1.1.0">
-<meta name="residual-risks" content="W-R120:open:no-live-demo-links-yet;W-R121:boundary:cases-are-anonymized;W-R122:open:experience-snapshot-2026-10">
+<meta name="theme-color" content="#0a0a0e" id="metaThemeColor">
+<meta name="description" content="Иван Холин — врач с 24-летним стажем, методолог, разработчик медицинских LLM-инструментов. Формализация клинических знаний в алгоритмы, аудит медицинской документации, техническая документация для медтеха.">
+<meta name="author" content="Холин Иван Алексеевич">
+<meta name="urn" content="urn:vanxo:artifact:stomvrn-site:v1.2.0">
+<meta name="residual-risks" content="W-R121:boundary:cases-are-anonymized;W-R122:open:experience-snapshot-2026-10;W-R123:open:og-image-not-set">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stomvrn.github.io/">
+<meta property="og:title" content="Иван Холин — врач, методолог, медицинские LLM">
+<meta property="og:description" content="24 года клинической практики. Формализация медицинских знаний в работающие инструменты. Ассистент клинической коммуникации — открытый чек-лист на 102 навыка.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="stomvrn.github.io">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Иван Холин — врач, методолог, медицинские LLM">
+<meta name="twitter:description" content="24 года клиники. Формализация знаний в инструменты.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0a0e'/%3E%3Ctext x='50' y='68' font-family='system-ui,sans-serif' font-size='50' font-weight='700' fill='%23d4a94e' text-anchor='middle'%3EИХ%3C/text%3E%3C/svg%3E">
+
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none';">
 <title>Иван Холин — врач, методолог, медицинские LLM</title>
 <style>
@@ -16,7 +30,7 @@
   --line:#232330;--line2:#3a3a4a;
   --t0:#e6e3dc;--t1:#9a978e;--t2:#5a5850;--t3:#3a3830;
   --gold:#d4a94e;--gold2:#e8c470;--gold-dim:rgba(212,169,78,.08);
-  --green:#7bc47f;--orange:#e8b350;--red:#e07a6b;
+  --green:#7bc47f;--orange:#e8b350;--red:#e07a6b;--blue:#4a8aff;--violet:#c77dff;
   --fm:ui-monospace,'SF Mono',Consolas,monospace;
   --f:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --fs:Georgia,'Iowan Old Style','Times New Roman',serif;
@@ -28,7 +42,7 @@
   --line:#d4d0c4;--line2:#b8b4a6;
   --t0:#1a1a18;--t1:#4a4a44;--t2:#7a7a70;--t3:#a8a89c;
   --gold:#8a6e2a;--gold2:#a88a40;--gold-dim:rgba(138,110,42,.06);
-  --green:#3a8a4a;--orange:#a87830;--red:#c04a3a;
+  --green:#3a8a4a;--orange:#a87830;--red:#c04a3a;--blue:#1f5fc4;--violet:#6740b8;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
@@ -47,7 +61,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 a{color:var(--gold);text-decoration:none}
 a:hover{text-decoration:underline}
 
-/* ─── HEADER ─── */
 header{
   padding:20px 0 18px;border-bottom:1px solid var(--line);margin-bottom:28px;
   display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;
@@ -65,6 +78,14 @@ header{
 .brand .tagline{
   font-size:14.5px;color:var(--t1);margin-top:10px;line-height:1.6;max-width:58ch;
 }
+.brand .numbers{
+  display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;
+  font-family:var(--fm);font-size:12px;color:var(--t2);
+}
+.brand .numbers b{
+  color:var(--gold);font-weight:700;font-size:15px;
+  font-feature-settings:'tnum';margin-right:2px;
+}
 .controls{display:flex;gap:6px;align-items:center;flex-shrink:0}
 .btn-icon{
   width:38px;height:38px;border-radius:50%;background:var(--bg2);
@@ -74,7 +95,6 @@ header{
 }
 .btn-icon:hover{color:var(--gold);border-color:var(--gold)}
 
-/* ─── OPEN TO WORK ─── */
 .open-to-work{
   background:linear-gradient(135deg,rgba(123,196,127,.1),rgba(212,169,78,.06));
   border:1px solid rgba(123,196,127,.4);border-radius:12px;
@@ -103,7 +123,6 @@ header{
   color:var(--green);border:1px solid rgba(123,196,127,.3);
 }
 
-/* ─── SECTIONS ─── */
 section{margin-bottom:36px;scroll-margin-top:20px}
 h2{
   font-family:var(--fs);font-size:1.25rem;font-weight:400;font-style:italic;
@@ -127,15 +146,14 @@ code{
   border:1px solid var(--line);word-break:break-word;
 }
 
-/* ─── CARDS ─── */
 .card{
   background:var(--bg2);border:1px solid var(--line);border-radius:12px;
   padding:18px 22px;margin-bottom:12px;
 }
 .card.gold{border-left:3px solid var(--gold)}
 .card.green{border-left:3px solid var(--green)}
-.card.blue{border-left:3px solid #4a8aff}
-.card.violet{border-left:3px solid #c77dff}
+.card.blue{border-left:3px solid var(--blue)}
+.card.violet{border-left:3px solid var(--violet)}
 .card h4{margin-top:0}
 
 .note{
@@ -144,10 +162,9 @@ code{
   font-size:13.5px;color:var(--t1);line-height:1.7;
 }
 .note.green{background:rgba(123,196,127,.06);border-left-color:var(--green)}
-.note.blue{background:rgba(74,138,255,.06);border-left-color:#4a8aff}
+.note.blue{background:rgba(74,138,255,.06);border-left-color:var(--blue)}
 .note strong{color:var(--t0)}
 
-/* ─── SKILLS GRID ─── */
 .skills{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:12px;margin:14px 0;
@@ -163,7 +180,6 @@ code{
   font-size:12.5px;color:var(--t1);line-height:1.6;
 }
 
-/* ─── TOOLS ─── */
 .tool{
   background:var(--bg2);border:1px solid var(--line);border-radius:12px;
   padding:16px 20px;margin-bottom:12px;transition:.15s;
@@ -196,7 +212,6 @@ code{
   background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:600;
 }
 
-/* ─── TABLE ─── */
 table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0}
 th,td{
   padding:10px 14px;border-bottom:1px solid var(--line);
@@ -208,7 +223,6 @@ th{
 }
 tr:hover td{background:var(--bg3)}
 
-/* ─── PRINCIPLES ─── */
 .principle{
   display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);
 }
@@ -221,7 +235,6 @@ tr:hover td{background:var(--bg3)}
 .principle .p-body strong{color:var(--t0);font-weight:600;display:block;margin-bottom:2px}
 .principle .p-body p{margin:0;font-size:13.5px}
 
-/* ─── CONTACTS ─── */
 .contacts{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:12px;margin:16px 0;
@@ -247,6 +260,7 @@ footer{
 
 @media(max-width:640px){
   .brand h1{font-size:1.2rem}
+  .brand .numbers{gap:12px}
   .skills,.contacts{grid-template-columns:1fr}
   .open-to-work{padding:16px 18px}
 }
@@ -265,16 +279,22 @@ footer{
     <h1>Иван Холин</h1>
     <div class="role">Врач · методолог · медицинские LLM</div>
     <p class="tagline">
-      20 лет клинической практики. Последние три года — формализация медицинских знаний
-      в работающие алгоритмы. Аудит документации, методология, техническая документация.
+      Формализация медицинских знаний в работающие алгоритмы. Аудит документации,
+      методология, техническая документация. Всё — автономно, без серверов,
+      данные не покидают устройство.
     </p>
+    <div class="numbers">
+      <span><b>24</b> года клиники</span>
+      <span><b>40+</b> артефактов</span>
+      <span><b>3</b> аккредитации</span>
+      <span><b>102</b> навыка в ассистенте</span>
+    </div>
   </div>
   <div class="controls">
-    <button class="btn-icon" id="themeToggle" title="Тема">◐</button>
+    <button class="btn-icon" id="themeToggle" title="Тема" aria-label="Переключить тему">◐</button>
   </div>
 </header>
 
-<!-- ═══════════ OPEN TO WORK ═══════════ -->
 <div class="open-to-work">
   <div class="otw-head">Открыт к удалённой работе</div>
   <div class="otw-body">
@@ -294,13 +314,12 @@ footer{
 
 <main>
 
-<!-- ═══════════ ABOUT ═══════════ -->
 <section id="about">
   <h2>О себе</h2>
   <p>
-    Врач-стоматолог с 24-летним стажем: терапия, ортопедия, хирургия.
-    Работал в участковой больнице, затем в частной практике. С 2023 года — параллельно
-    разработка медицинских инструментов и методологий.
+    Врач-стоматолог с 24-летним стажем: терапия, ортопедия, хирургия. Три действующие
+    аккредитации. Работал в участковой больнице, затем в частной практике. С 2023 года —
+    параллельно разработка медицинских инструментов и методологий.
   </p>
   <p>
     Не программист в классическом смысле. <strong>Методолог, который умеет говорить
@@ -315,7 +334,6 @@ footer{
   </p>
 </section>
 
-<!-- ═══════════ WHAT I DO ═══════════ -->
 <section id="what-i-do">
   <h2>Что я делаю</h2>
   <div class="skills">
@@ -343,10 +361,17 @@ footer{
         residual risks и явными границами.
       </div>
     </div>
+    <div class="skill">
+      <div class="s-head">LLM как соавтор</div>
+      <div class="s-body">
+        Работа с большими языковыми моделями как с инструментом производства:
+        проектирование промптов, контроль галлюцинаций, разметка «факт / гипотеза»,
+        построение автономных офлайн-приложений без зависимостей.
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ═══════════ METHODOLOGY ═══════════ -->
 <section id="methodology">
   <h2>Как я формализую медицинские знания</h2>
   <p>
@@ -421,7 +446,6 @@ footer{
   </div>
 </section>
 
-<!-- ═══════════ TOOLS ═══════════ -->
 <section id="tools">
   <h2>Инструменты</h2>
   <p>Работающие артефакты. Офлайн, без серверов, данные не покидают устройство.</p>
@@ -429,7 +453,7 @@ footer{
   <div class="tool">
     <div class="t-head">
       <span class="t-name">Ассистент клинической коммуникации</span>
-      <span class="t-status dev">В разработке</span>
+      <span class="t-status available">v1.0.0 · Доступен</span>
     </div>
     <div class="t-desc">
       Интерактивный чек-лист коммуникативных навыков для врача. 102 навыка, 15 этапов
@@ -439,11 +463,11 @@ footer{
     </div>
     <div class="t-tags">
       <span>HTML</span><span>офлайн</span><span>102 навыка</span>
-      <span>15 этапов</span><span>SHA-256</span>
+      <span>15 этапов</span><span>SHA-256</span><span>MIT + CC BY-NC-SA</span>
     </div>
     <div class="t-links">
-      <a href="#" class="primary">Демо (скоро)</a>
-      <a href="https://github.com/stomvrn" target="_blank" rel="noopener">Код на GitHub</a>
+      <a href="https://stomvrn.github.io/clinical-communication-assistant/" target="_blank" rel="noopener" class="primary">Открыть демо</a>
+      <a href="https://github.com/stomvrn/clinical-communication-assistant" target="_blank" rel="noopener">Код на GitHub</a>
     </div>
   </div>
 
@@ -461,8 +485,7 @@ footer{
       <span>HTML</span><span>офлайн</span><span>14 утилит</span><span>открытый код</span>
     </div>
     <div class="t-links">
-      <a href="https://github.com/stomvrn/vanxo-tools" target="_blank" rel="noopener" class="primary">Открыть демо</a>
-      <a href="https://github.com/stomvrn/vanxo-tools" target="_blank" rel="noopener">Код на GitHub</a>
+      <a href="https://github.com/stomvrn/vanxo-tools" target="_blank" rel="noopener" class="primary">Открыть на GitHub</a>
     </div>
   </div>
 
@@ -490,7 +513,6 @@ footer{
   </div>
 </section>
 
-<!-- ═══════════ CASES ═══════════ -->
 <section id="cases">
   <h2>Кейсы</h2>
   <p>Обезличенные примеры работы. Без разглашения конфиденциальности.</p>
@@ -524,7 +546,6 @@ footer{
   </div>
 </section>
 
-<!-- ═══════════ EXPERIENCE ═══════════ -->
 <section id="experience">
   <h2>Опыт</h2>
   <table>
@@ -533,7 +554,7 @@ footer{
     </thead>
     <tbody>
       <tr>
-        <td>2001–2015</td>
+        <td>2002–2015</td>
         <td>Участковая больница, Воронежская область</td>
         <td>Врач-стоматолог</td>
       </tr>
@@ -571,7 +592,6 @@ footer{
   </div>
 </section>
 
-<!-- ═══════════ PRINCIPLES ═══════════ -->
 <section id="principles">
   <h2>Как я работаю</h2>
   <div class="card">
@@ -613,7 +633,6 @@ footer{
   </div>
 </section>
 
-<!-- ═══════════ CONTACTS ═══════════ -->
 <section id="contacts">
   <h2>Контакты</h2>
   <p>Основной канал — Telegram. Отвечаю лично, в порядке поступления.</p>
@@ -627,11 +646,11 @@ footer{
       <div class="c-value"><a href="https://github.com/stomvrn" target="_blank" rel="noopener">github.com/stomvrn</a></div>
     </div>
     <div class="contact">
-      <div class="c-label">E-mail</div>
-      <div class="c-value">по запросу в Telegram</div>
+      <div class="c-label">Boosty</div>
+      <div class="c-value"><a href="https://boosty.to/ivan_kholin_digital" target="_blank" rel="noopener">boosty.to/ivan_kholin_digital</a></div>
     </div>
     <div class="contact">
-      <div class="c-label">Телефон</div>
+      <div class="c-label">E-mail · Телефон</div>
       <div class="c-value">по запросу в Telegram</div>
     </div>
   </div>
@@ -646,29 +665,30 @@ footer{
 
 <footer>
   © 2026 Иван Холин · Острогожск, Воронежская область<br>
-  stomvrn.github.io · urn:vanxo:artifact:stomvrn-site:v1.1.0<br>
+  stomvrn.github.io · urn:vanxo:artifact:stomvrn-site:v1.2.0 · обновлено 06.10.2026<br>
   Лицензии: MIT (код) · CC BY-NC-SA 4.0 (текст)
 </footer>
 
 <script>
 "use strict";
 (function(){
-  const KEY = 'stomvrn-theme';
-  function safeGet(k, def){ try{ const v = localStorage.getItem(k); return v === null ? def : v; }catch(_){ return def; } }
+  var KEY = 'stomvrn-theme';
+  function safeGet(k, def){ try{ var v = localStorage.getItem(k); return v === null ? def : v; }catch(_){ return def; } }
   function safeSet(k, v){ try{ localStorage.setItem(k, v); return true; }catch(_){ return false; } }
 
   function applyTheme(t){
     document.documentElement.setAttribute('data-theme', t);
-    const m = document.querySelector('meta[name="theme-color"]');
-    if(m) m.content = t === 'light' ? '#f5f3ee' : '#0a0a0e';
+    var m = document.getElementById('metaThemeColor');
+    if(m) m.setAttribute('content', t === 'light' ? '#f5f3ee' : '#0a0a0e');
     safeSet(KEY, t);
   }
   function initTheme(){
-    const t = safeGet(KEY, 'dark');
+    var t = safeGet(KEY, 'dark');
     applyTheme(t === 'light' ? 'light' : 'dark');
   }
-  document.getElementById('themeToggle').addEventListener('click', function(){
-    const cur = document.documentElement.getAttribute('data-theme');
+  var btn = document.getElementById('themeToggle');
+  if(btn) btn.addEventListener('click', function(){
+    var cur = document.documentElement.getAttribute('data-theme');
     applyTheme(cur === 'dark' ? 'light' : 'dark');
   });
   initTheme();
