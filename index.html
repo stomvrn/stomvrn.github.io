@@ -1,853 +1,716 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="dark" data-version="1.0.0"
-      data-urn="urn:vanxo:artifact:workshop:1.0.0" data-status="CANONICAL">
+<html lang="ru" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0a0e14">
-<meta name="urn" content="urn:vanxo:artifact:workshop:1.0.0">
-<meta name="author" content="Холин Иван Алексеевич (VanXo)">
-<meta name="status" content="CANONICAL">
-<meta name="license" content="MIT">
-<meta name="provenance" content="Workshop v1.0.0. Основная страница. Собрано из Home v1.0.0, portfolio v2.0.0, resume-freelance v1.0.0, Compass v1.0.0, vanxo-tools. Заменяет заглушки реальными ссылками.">
-<meta name="residual-risks" content="W-R320:boundary:static-page-no-backend;W-R321:open:contact-channels-public;W-R322:boundary:artifacts-not-hosted-here;W-R323:open:no-analytics-by-design;W-R324:boundary:mit-license-does-not-protect-method">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none';">
-<meta name="description" content="Мастерская Ивана Холина — врача, методолога, разработчика медицинских LLM-инструментов.">
-<title>Мастерская · Иван Холин</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0a0e14" id="metaThemeColor">
+
+<title>Иван Холин — врач, методолог, медицинские LLM-инструменты</title>
+<meta name="description" content="Врач-стоматолог, 20 лет практики. Разрабатываю автономные медицинские LLM-инструменты: офлайн, без передачи данных. Методология, промпт-инжиниринг, документация.">
+<meta name="author" content="Холин Иван Алексеевич">
+<meta name="keywords" content="врач, стоматолог, медицинский методолог, LLM, промпт-инжиниринг, медтех, digital health">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stomvrn.github.io/">
+<meta property="og:title" content="Иван Холин — врач, методолог, медицинские LLM-инструменты">
+<meta property="og:description" content="20 лет практики. Автономные медицинские инструменты: офлайн, без передачи данных.">
+<meta property="og:site_name" content="stomvrn.github.io">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Иван Холин — врач, методолог">
+<meta name="twitter:description" content="20 лет практики. Автономные медицинские LLM-инструменты.">
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; font-src data:; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'; connect-src 'none';">
+
 <style>
 :root{
-  --bg:#0a0e14;--bg2:#111820;--bg3:#1a222c;--bg4:#232e3a;
-  --line:#2a3442;--line2:#3d4a5a;
-  --ink:#e2e8f0;--dim:#94a3b8;--dim2:#64748b;--dim3:#475569;
-  --ac:#4a8aff;--ac2:#79b8e0;
-  --gd:#d4a94e;--gd2:#ffd966;
-  --gr:#10d97d;--pu:#c77dff;--cy:#4dd0e1;--rd:#ff4d6d;--or:#ff9e64;
+  --bg:#0a0e14;--bg-soft:#0e131b;
+  --surface:#11161f;--surface-2:#171d27;--surface-3:#1f2733;
+  --border:#212a36;--border-soft:#181f29;
+  --text:#e8eef4;--text-2:#a4aeb9;--text-3:#6b7885;--text-4:#48525f;
+  --accent:#6ab0ff;--accent-soft:rgba(106,176,255,.10);
+  --green:#4cd48a;--green-soft:rgba(76,212,138,.10);
+  --gold:#e8c46a;--gold-soft:rgba(232,196,106,.10);
+  --purple:#b38cff;--purple-soft:rgba(179,140,255,.10);
+  --r:12px;--r-sm:8px;--r-xs:6px;
+  --font:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;
   --mono:'SF Mono','JetBrains Mono','Fira Code',Consolas,monospace;
-  --sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-  --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
-  --r:10px;--rs:6px;
-  --pad:clamp(16px,2.4vw + 8px,40px);
-  --maxw:1000px;
+  --shadow:0 8px 32px rgba(0,0,0,.35);
+  --ease:cubic-bezier(.22,1,.36,1);--t:.22s;
+  --max:720px;
 }
 [data-theme="light"]{
-  --bg:#f4f6fc;--bg2:#fff;--bg3:#eef1f8;--bg4:#e2e7f0;
-  --line:#dce1ed;--line2:#a8b3c4;
-  --ink:#0f172a;--dim:#334155;--dim2:#64748b;--dim3:#94a3b8;
-  --ac:#2563eb;--ac2:#1d4ed8;
-  --gd:#8a6e2a;--gd2:#b8860b;
-  --gr:#0d9a5e;--pu:#8e44ad;--cy:#0e8a7a;--rd:#c0392b;--or:#d97706;
+  --bg:#fafbfc;--bg-soft:#f3f5f8;
+  --surface:#ffffff;--surface-2:#f4f6f9;--surface-3:#e9edf2;
+  --border:#e1e6ec;--border-soft:#eef1f5;
+  --text:#141a22;--text-2:#4b5560;--text-3:#7a8590;--text-4:#a4aeb8;
+  --accent:#1f5fc4;--accent-soft:rgba(31,95,196,.08);
+  --green:#0f7a4b;--green-soft:rgba(15,122,75,.08);
+  --gold:#8a6418;--gold-soft:rgba(138,100,24,.08);
+  --purple:#6740b8;--purple-soft:rgba(103,64,184,.08);
+  --shadow:0 8px 32px rgba(0,0,0,.06);
 }
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  font-family:var(--sans);background:var(--bg);color:var(--ink);
-  font-size:15.5px;line-height:1.7;min-height:100vh;
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  font-size:16px;
+  line-height:1.7;
+  min-height:100vh;
   -webkit-font-smoothing:antialiased;
-  transition:background .25s,color .25s;
-  padding:0 0 40px;
+  -moz-osx-font-smoothing:grayscale;
+  font-feature-settings:'kern','liga','calt';
 }
-::-webkit-scrollbar{width:8px;height:8px}
-::-webkit-scrollbar-track{background:var(--bg2)}
-::-webkit-scrollbar-thumb{background:var(--line2);border-radius:4px}
-::selection{background:rgba(74,138,255,.25)}
-a{color:var(--ac);text-decoration:none;transition:.15s}
-a:hover{text-decoration:underline}
-button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:var(--accent-soft);color:var(--text)}
+a{color:var(--accent);text-decoration:none;transition:color var(--t)}
+a:hover{color:var(--text)}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--accent);color:#fff;padding:8px 16px;z-index:999;border-radius:0 0 8px 0;font-weight:600}
+.skip-link:focus{left:8px}
 
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.wrap{max-width:var(--max);margin:0 auto;padding:40px 24px 96px}
 
-/* ─── Header ─── */
-header.top{
-  position:sticky;top:0;z-index:50;
-  background:rgba(10,14,20,.92);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
+/* ═══════════ HEADER ═══════════ */
+.head{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-bottom:28px;margin-bottom:56px;
+  border-bottom:1px solid var(--border-soft);
 }
-[data-theme="light"] header.top{background:rgba(244,246,252,.92)}
-.top-inner{
-  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
-  padding:14px 0;max-width:var(--maxw);margin:0 auto;
-  padding-left:var(--pad);padding-right:var(--pad);
+.head-id{display:flex;align-items:center;gap:14px}
+.head-mark{
+  width:40px;height:40px;border-radius:11px;
+  background:linear-gradient(135deg,#6ab0ff,#b38cff);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:14px;letter-spacing:-.02em;
+  flex-shrink:0;
 }
-.brand{display:flex;flex-direction:column;gap:2px;flex-shrink:0}
-.brand .name{font-weight:700;font-size:15px;color:var(--ink);letter-spacing:-.01em}
-.brand .role{font-family:var(--mono);font-size:10.5px;color:var(--dim2);letter-spacing:.03em}
-.top-nav{display:flex;gap:2px;flex-wrap:wrap;flex:1;justify-content:flex-end}
-.top-nav a{
-  font-size:13px;color:var(--dim);padding:7px 12px;border-radius:var(--rs);
-  transition:.15s;white-space:nowrap;
+.head-name{font-weight:600;font-size:15px;letter-spacing:-.005em;line-height:1.3}
+.head-role{font-size:12.5px;color:var(--text-3);font-family:var(--mono);margin-top:2px}
+.head-btn{
+  width:36px;height:36px;border-radius:8px;
+  border:1px solid var(--border);
+  background:transparent;color:var(--text-3);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:14px;transition:all var(--t) var(--ease);font-family:inherit;
 }
-.top-nav a:hover{background:var(--bg2);color:var(--ac);text-decoration:none}
-.theme-btn{
-  width:36px;height:36px;border-radius:50%;border:1px solid var(--line2);
-  color:var(--dim);font-size:15px;display:flex;align-items:center;justify-content:center;
-  transition:.15s;flex-shrink:0;
-}
-.theme-btn:hover{border-color:var(--ac);color:var(--ac)}
+.head-btn:hover{color:var(--text);border-color:var(--border);background:var(--surface)}
 
-/* ─── Hero ─── */
-.hero{padding:72px 0 56px;border-bottom:1px solid var(--line)}
-.hero .label{
-  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ac);margin-bottom:20px;display:block;
-}
+/* ═══════════ HERO ═══════════ */
+.hero{margin-bottom:72px}
 .hero h1{
-  font-family:var(--serif);font-size:clamp(30px,4vw + 14px,50px);
-  font-weight:400;line-height:1.14;letter-spacing:-.015em;
-  color:var(--ink);margin-bottom:22px;max-width:22ch;
+  font-size:clamp(1.5rem,3.5vw,1.9rem);
+  font-weight:600;
+  line-height:1.35;
+  letter-spacing:-.02em;
+  color:var(--text);
+  margin-bottom:20px;
+  max-width:580px;
 }
-.hero h1 em{color:var(--ac);font-style:italic}
-.hero .lead{
-  font-size:17px;color:var(--dim);line-height:1.7;max-width:62ch;margin-bottom:6px;
+.hero p{
+  font-size:1rem;
+  color:var(--text-2);
+  line-height:1.75;
+  max-width:600px;
+  margin-bottom:12px;
 }
-.hero .lead strong{color:var(--ink);font-weight:600}
-.hero .lead + .lead{margin-top:14px}
+.hero p:last-child{margin-bottom:0}
 
-.hero-meta{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:12px;margin-top:36px;
+/* ═══════════ SECTION ═══════════ */
+.section{margin-bottom:64px;scroll-margin-top:24px}
+.sec-label{
+  font-family:var(--mono);font-size:11px;
+  color:var(--text-4);letter-spacing:.1em;
+  text-transform:uppercase;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
 }
-.hero-meta .cell{
-  padding:14px 16px;background:var(--bg2);border:1px solid var(--line);
-  border-radius:var(--rs);
+.sec-label::before{
+  content:'';width:14px;height:1px;background:var(--text-4);
 }
-.hero-meta .cell .k{
-  font-family:var(--mono);font-size:10px;font-weight:700;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--dim2);
-  margin-bottom:6px;display:block;
+.sec-title{
+  font-size:1.15rem;font-weight:600;
+  letter-spacing:-.015em;color:var(--text);
+  line-height:1.4;margin-bottom:8px;
 }
-.hero-meta .cell .v{font-size:14px;color:var(--ink);font-weight:500}
+.sec-desc{color:var(--text-2);font-size:.94rem;line-height:1.7;max-width:620px;margin-bottom:24px}
 
-/* ─── Sections ─── */
-section.block{padding:56px 0;border-bottom:1px solid var(--line)}
-section.block:last-of-type{border-bottom:none}
-.block-header{margin-bottom:32px;max-width:66ch}
-.block-header .num{
-  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;
-  color:var(--dim2);display:block;margin-bottom:10px;
+/* ═══════════ BLOCK ═══════════ */
+.block{
+  background:var(--surface);
+  border:1px solid var(--border-soft);
+  border-radius:var(--r);
+  padding:24px 26px;
+  margin-bottom:12px;
+  transition:border-color var(--t) var(--ease), background var(--t) var(--ease);
 }
-.block-header h2{
-  font-family:var(--serif);font-size:clamp(24px,2vw + 16px,32px);
-  font-weight:400;font-style:italic;color:var(--ink);
-  letter-spacing:-.01em;margin-bottom:12px;line-height:1.2;
+.block:hover{border-color:var(--border)}
+.block h3{
+  font-size:1rem;font-weight:600;
+  color:var(--text);letter-spacing:-.01em;
+  line-height:1.4;margin-bottom:10px;
 }
-.block-header p{color:var(--dim);font-size:15.5px;line-height:1.75}
+.block p{color:var(--text-2);font-size:.93rem;line-height:1.7}
+.block p + p{margin-top:10px}
+.block p:last-child{margin-bottom:0}
 
-/* ─── Prose ─── */
-.prose{
-  font-family:var(--serif);font-size:17px;line-height:1.8;
-  color:var(--dim);max-width:66ch;
+/* ═══════════ ARTIFACT ═══════════ */
+.artifact{
+  position:relative;
+  background:var(--surface);
+  border:1px solid var(--border-soft);
+  border-radius:var(--r);
+  padding:24px 26px;
+  margin-bottom:12px;
+  transition:all var(--t) var(--ease);
+  overflow:hidden;
 }
-.prose strong{color:var(--ink);font-weight:600}
-.prose em{color:var(--ac2);font-style:italic}
-.prose p + p{margin-top:14px}
+.artifact::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:var(--border);transition:background var(--t);
+}
+.artifact.live::before{background:var(--green)}
+.artifact.soon::before{background:var(--gold)}
+.artifact:hover{border-color:var(--border);transform:translateY(-1px)}
 
-/* ─── Do-grid ─── */
-.do-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:14px;
+.artifact-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:14px;margin-bottom:12px;flex-wrap:wrap;
 }
-.do-card{
-  padding:22px 24px;background:var(--bg2);border:1px solid var(--line);
-  border-radius:var(--rs);transition:.15s;
+.artifact-name{
+  font-size:1rem;font-weight:600;color:var(--text);
+  letter-spacing:-.01em;line-height:1.4;
+  flex:1;min-width:200px;
 }
-.do-card:hover{border-color:var(--line2)}
-.do-card h3{
-  font-family:var(--serif);font-size:17px;font-weight:600;
-  color:var(--ink);margin-bottom:10px;line-height:1.35;
+.artifact-mark{
+  font-family:var(--mono);font-size:10.5px;
+  padding:3px 10px;border-radius:99px;
+  letter-spacing:.05em;text-transform:uppercase;
+  font-weight:600;white-space:nowrap;
+  border:1px solid;
 }
-.do-card p{
-  font-size:14px;color:var(--dim);line-height:1.7;margin:0;
+.artifact-mark.live{
+  background:var(--green-soft);color:var(--green);border-color:var(--green);
 }
-.do-card p + p{margin-top:8px}
+.artifact-mark.soon{
+  background:var(--gold-soft);color:var(--gold);border-color:var(--gold);
+}
+.artifact-mark.dev{
+  background:var(--purple-soft);color:var(--purple);border-color:var(--purple);
+}
+.artifact-desc{
+  color:var(--text-2);font-size:.92rem;
+  line-height:1.7;margin-bottom:14px;
+}
+.artifact-meta{
+  display:flex;flex-wrap:wrap;gap:6px;
+  margin-bottom:16px;
+}
+.artifact-meta span{
+  font-family:var(--mono);font-size:11px;
+  color:var(--text-3);
+  padding:3px 9px;border-radius:5px;
+  background:var(--surface-2);
+  border:1px solid var(--border-soft);
+}
+.artifact-links{display:flex;flex-wrap:wrap;gap:8px}
 
-/* ─── Workshop — registry ─── */
-.workshop-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-  gap:16px;
+/* ═══════════ BUTTONS ═══════════ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:6px;padding:8px 16px;
+  font-size:.85rem;font-weight:500;
+  font-family:inherit;
+  border-radius:var(--r-sm);
+  border:1px solid var(--border);
+  background:var(--surface-2);
+  color:var(--text-2);
+  cursor:pointer;transition:all var(--t) var(--ease);
+  text-decoration:none;white-space:nowrap;
+  line-height:1.3;
 }
-.ws{
-  background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);
-  padding:20px 22px;transition:.2s;
-  display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;
-}
-.ws:hover{border-color:var(--ac);transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.25)}
-[data-theme="light"] .ws:hover{box-shadow:0 12px 32px rgba(37,99,235,.1)}
-.ws::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--ac),transparent 60%);
-}
-.ws-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
-.ws-name{
-  font-family:var(--serif);font-size:18px;font-weight:600;
-  color:var(--ink);line-height:1.25;flex:1;
-}
-.ws-ver{
-  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.04em;
-  color:var(--ac);padding:3px 8px;background:rgba(74,138,255,.1);
-  border:1px solid rgba(74,138,255,.3);border-radius:10px;white-space:nowrap;
-}
-.ws-desc{font-size:14px;color:var(--dim);line-height:1.65;margin:0}
-.ws-urn{
-  font-family:var(--mono);font-size:10.5px;color:var(--dim3);
-  padding-top:10px;border-top:1px dashed var(--line);
-  word-break:break-all;line-height:1.5;
-}
-.ws-foot{
-  margin-top:auto;display:flex;justify-content:space-between;
-  align-items:center;gap:10px;flex-wrap:wrap;padding-top:6px;
-}
-.ws-status{
-  font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.05em;
-  text-transform:uppercase;color:var(--gr);
-  padding:2px 8px;border:1px solid rgba(16,217,125,.35);
-  background:rgba(16,217,125,.08);border-radius:8px;white-space:nowrap;
-}
-.ws-status.draft{color:var(--or);border-color:rgba(255,158,100,.35);background:rgba(255,158,100,.08)}
-.ws-status.proto{color:var(--pu);border-color:rgba(199,125,255,.35);background:rgba(199,125,255,.08)}
-.ws-link{
-  font-family:var(--mono);font-size:11px;color:var(--dim2);
-  transition:.15s;white-space:nowrap;
-}
-.ws-link:hover{color:var(--ac);text-decoration:none}
+.btn:hover{background:var(--surface-3);color:var(--text);border-color:var(--border)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{filter:brightness(1.05);color:#fff}
+.btn.ghost{background:transparent}
+.btn.small{padding:7px 14px;font-size:.82rem}
 
-/* ─── Principles ─── */
-.principles{display:flex;flex-direction:column;gap:12px;max-width:70ch}
-.principle{
-  display:flex;gap:14px;align-items:flex-start;
-  padding:16px 20px;background:var(--bg2);
-  border:1px solid var(--line);border-radius:var(--rs);
-  border-left:3px solid var(--ac);
+/* ═══════════ TABLE ═══════════ */
+.table-wrap{
+  border:1px solid var(--border-soft);
+  border-radius:var(--r-sm);
+  overflow-x:auto;
+  background:var(--surface);
 }
-.principle .n{
-  font-family:var(--mono);font-size:14px;font-weight:700;
-  color:var(--ac);flex-shrink:0;line-height:1;padding-top:3px;min-width:22px;
+table{width:100%;border-collapse:collapse;font-size:.89rem;min-width:520px}
+th,td{
+  padding:14px 18px;text-align:left;
+  border-bottom:1px solid var(--border-soft);
+  vertical-align:top;line-height:1.5;
 }
-.principle .b{flex:1;min-width:0}
-.principle .t{
-  font-family:var(--serif);font-size:16px;font-weight:600;
-  color:var(--ink);margin-bottom:6px;line-height:1.35;
+tr:last-child td{border-bottom:none}
+th{
+  background:var(--surface-2);
+  font-weight:600;font-size:.72rem;
+  color:var(--text-3);text-transform:uppercase;
+  letter-spacing:.06em;white-space:nowrap;
 }
-.principle .d{font-size:14px;color:var(--dim);line-height:1.7;margin:0}
+td{color:var(--text-2)}
+td strong{color:var(--text);font-weight:600}
 
-/* ─── License ─── */
-.license-box{
-  background:var(--bg2);border:1px solid var(--line);
-  border-left:3px solid var(--gd);border-radius:var(--rs);
-  padding:22px 26px;margin-top:12px;
+/* ═══════════ NOTICE ═══════════ */
+.notice{
+  border-left:2px solid var(--border);
+  padding:14px 20px;
+  background:var(--surface);
+  border-radius:0 var(--r-sm) var(--r-sm) 0;
+  font-size:.9rem;
+  color:var(--text-2);
+  line-height:1.7;
+  margin:20px 0 0;
 }
-.license-box h3{
-  font-family:var(--serif);font-size:17px;font-weight:600;
-  color:var(--gd2);margin-bottom:10px;
-}
-.license-box p{font-size:14px;color:var(--dim);line-height:1.7;margin:0}
-.license-box p + p{margin-top:10px}
-.license-box strong{color:var(--ink)}
-.license-box code{
-  font-family:var(--mono);font-size:12.5px;color:var(--cy);
-  background:var(--bg3);padding:1px 6px;border-radius:4px;
-  border:1px solid var(--line);
-}
+.notice strong{color:var(--text);font-weight:600}
+.notice.accent{border-left-color:var(--accent)}
+.notice.green{border-left-color:var(--green)}
+.notice.gold{border-left-color:var(--gold)}
 
-/* ─── Contact ─── */
-.contact-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:14px;margin-top:6px;
+/* ═══════════ CONTACTS ═══════════ */
+.contacts{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:10px;
 }
-.contact-card{
-  display:block;padding:20px 22px;background:var(--bg2);
-  border:1px solid var(--line);border-radius:var(--rs);
-  transition:.15s;text-decoration:none;
+.contact{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 18px;
+  background:var(--surface);
+  border:1px solid var(--border-soft);
+  border-radius:var(--r-sm);
+  transition:all var(--t) var(--ease);
+  text-decoration:none;color:inherit;
 }
-.contact-card:hover{
-  border-color:var(--ac);text-decoration:none;transform:translateY(-1px);
+.contact:hover{
+  border-color:var(--border);
+  background:var(--surface-2);
 }
-.contact-card .label{
-  font-family:var(--mono);font-size:10.5px;font-weight:700;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--dim2);
-  display:block;margin-bottom:8px;
+.contact-mark{
+  width:38px;height:38px;border-radius:9px;
+  background:var(--surface-2);
+  color:var(--text-3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;flex-shrink:0;
+  transition:all var(--t);
 }
-.contact-card .value{
-  font-family:var(--mono);font-size:14px;color:var(--ink);
-  word-break:break-all;line-height:1.4;
+.contact:hover .contact-mark{
+  background:var(--accent-soft);color:var(--accent);
 }
-.contact-card .hint{font-size:12px;color:var(--dim3);margin-top:6px;line-height:1.55}
-
-/* ─── Risks block ─── */
-.risk-list{
-  background:var(--bg2);border:1px solid var(--line);
-  border-radius:var(--r);padding:6px 22px;
+.contact-body{min-width:0;flex:1}
+.contact-label{
+  font-family:var(--mono);font-size:10.5px;
+  color:var(--text-4);text-transform:uppercase;
+  letter-spacing:.06em;margin-bottom:2px;
 }
-.risk-row{
-  display:grid;grid-template-columns:120px 1fr;gap:16px;
-  padding:12px 0;border-bottom:1px dashed var(--line);
-  align-items:baseline;
-}
-.risk-row:last-child{border-bottom:none}
-.risk-row .rid{
-  font-family:var(--mono);font-size:10.5px;color:var(--or);
-  font-weight:700;letter-spacing:.04em;
-}
-.risk-row .rbody{font-size:13.5px;color:var(--dim);line-height:1.65}
-
-/* ─── Footer ─── */
-footer{
-  padding:36px 0 40px;border-top:1px solid var(--line);
-  font-family:var(--mono);font-size:11px;color:var(--dim3);
-  line-height:1.9;letter-spacing:.02em;
-}
-footer .foot-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer code{
-  font-family:var(--mono);font-size:10.5px;color:var(--dim2);
-  background:var(--bg2);padding:2px 6px;border-radius:3px;
-  border:1px solid var(--line);
-}
-footer .sign{
-  margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);
-  font-size:10.5px;color:var(--dim3);line-height:1.8;
+.contact-value{
+  font-size:.9rem;color:var(--text);
+  font-weight:500;line-height:1.4;
+  word-break:break-word;
 }
 
-/* ─── Responsive ─── */
-@media (max-width:640px){
-  .hero{padding:48px 0 40px}
-  section.block{padding:40px 0}
-  .top-inner{padding:10px 0;padding-left:var(--pad);padding-right:var(--pad)}
-  .top-nav{order:3;width:100%;justify-content:flex-start;overflow-x:auto}
-  .top-nav a{padding:6px 10px;font-size:12px}
-  .ws{padding:16px 18px}
-  .principle{padding:14px 16px;gap:12px}
-  .risk-row{grid-template-columns:1fr;gap:4px}
+/* ═══════════ TEXT LIST ═══════════ */
+.text-list{list-style:none;padding:0;margin:0}
+.text-list li{
+  color:var(--text-2);font-size:.93rem;
+  line-height:1.7;padding:9px 0 9px 24px;
+  position:relative;border-bottom:1px solid var(--border-soft);
 }
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{
-    transition-duration:.01ms!important;
-    animation-duration:.01ms!important;
-    scroll-behavior:auto!important;
-  }
+.text-list li:last-child{border-bottom:none}
+.text-list li::before{
+  content:'—';position:absolute;left:0;top:9px;
+  color:var(--text-4);font-family:var(--mono);
+}
+.text-list li strong{color:var(--text);font-weight:600}
+
+/* ═══════════ FOOTER ═══════════ */
+.foot{
+  margin-top:80px;padding-top:28px;
+  border-top:1px solid var(--border-soft);
+  font-family:var(--mono);font-size:12px;
+  color:var(--text-4);line-height:1.9;
+  display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+}
+.foot a{color:var(--text-3)}
+.foot a:hover{color:var(--accent)}
+
+/* ═══════════ RESPONSIVE ═══════════ */
+@media (max-width:600px){
+  .wrap{padding:24px 18px 64px}
+  .head{padding-bottom:22px;margin-bottom:40px}
+  .hero{margin-bottom:56px}
+  .section{margin-bottom:48px}
+  .block,.artifact{padding:20px 20px}
+  .hero h1{font-size:1.35rem}
+  .head-mark{width:36px;height:36px;font-size:13px}
+  .head-name{font-size:14px}
+  .head-role{font-size:11.5px}
+  .contacts{grid-template-columns:1fr}
+  th,td{padding:11px 14px;font-size:.84rem}
+  .sec-title{font-size:1.05rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  html{scroll-behavior:auto}
 }
 @media print{
-  body{background:#fff;color:#000;font-size:11pt;padding:0}
-  header.top{position:static;background:#fff;border-bottom:1px solid #ccc}
-  .top-nav,.theme-btn{display:none!important}
-  .hero{padding:20px 0}
-  section.block{padding:20px 0;page-break-inside:avoid;border-bottom:1px solid #ccc}
-  .ws,.do-card,.principle,.contact-card,.hero-meta .cell,.license-box,.risk-list{
-    background:#f9f9f9;border:1px solid #ccc;
-    page-break-inside:avoid;box-shadow:none!important;transform:none!important;
-  }
-  .ws:hover{transform:none;box-shadow:none;border-color:#ccc}
-  a{color:#000;text-decoration:underline}
-  footer{background:#fff}
+  body{background:#fff;color:#000;font-size:11pt}
+  .head-btn,.btn{display:none !important}
+  .block,.artifact,.contact,.table-wrap{box-shadow:none;border:1px solid #ccc;break-inside:avoid}
+  a{color:#000}
+  .section{margin-bottom:20pt}
+  .artifact::before{display:none}
+  .artifact-mark,.sec-label{color:#666}
 }
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Перейти к содержимому</a>
 
-<header class="top">
-  <div class="top-inner">
-    <div class="brand">
-      <span class="name">Иван Холин</span>
-      <span class="role">врач · методолог · LLM</span>
+<div class="wrap">
+
+<header class="head">
+  <div class="head-id">
+    <div class="head-mark">ИХ</div>
+    <div>
+      <div class="head-name">Иван Холин</div>
+      <div class="head-role">Врач · методолог · медицинские LLM</div>
     </div>
-    <nav class="top-nav">
-      <a href="#about">О себе</a>
-      <a href="#whatido">Чем занимаюсь</a>
-      <a href="#workshop">Мастерская</a>
-      <a href="#principles">Принципы</a>
-      <a href="#license">Лицензия</a>
-      <a href="#contact">Контакты</a>
-    </nav>
-    <button class="theme-btn" id="themeBtn" title="Тема">◐</button>
   </div>
+  <button class="head-btn" id="themeBtn" aria-label="Переключить тему" title="Переключить тему">🌓</button>
 </header>
 
-<main class="wrap">
+<main id="main">
 
-<!-- ═══ HERO ═══ -->
+<!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
-  <span class="label">Острогожск · удалённо</span>
-  <h1>Врач. <em>Делаю инструменты</em> для медицины.</h1>
-  <p class="lead">
-    18 лет клинической практики. Три действующие аккредитации — терапия, ортопедия, хирургия.
+  <h1>Врач-стоматолог. Разрабатываю автономные инструменты для медицинской практики.</h1>
+  <p>
+    20 лет клинической практики: терапия, ортопедия, хирургия. Последние три года — разработка
+    медицинских LLM-инструментов. Всё автономно, работает офлайн, данные не покидают устройство.
   </p>
-  <p class="lead">
-    Последние три года — <strong>медицинские инструменты на базе LLM</strong>. Автономные:
-    работают офлайн, без установки, без облаков. Данные не покидают машину.
+  <p>
+    Работаю с методологией, промпт-инжинирингом, технической документацией.
+    Ниже — коротко о том, что уже сделано, что в работе, и как связаться.
+  </p>
+</section>
+
+<!-- ═══════════ ОПЫТ ═══════════ -->
+<section class="section" id="experience">
+  <div class="sec-label">Опыт</div>
+  <h2 class="sec-title">Профессиональный путь</h2>
+  <p class="sec-desc">Клиническая практика и разработка — параллельно, с постепенным смещением фокуса.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Период</th>
+          <th>Деятельность</th>
+          <th>Роль</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>2001–2015</strong></td>
+          <td>Участковая больница, Воронежская область</td>
+          <td>Врач-стоматолог</td>
+        </tr>
+        <tr>
+          <td><strong>2015 — наст. время</strong></td>
+          <td>Частная практика, Острогожск</td>
+          <td>Врач-стоматолог — терапия, ортопедия, хирургия</td>
+        </tr>
+        <tr>
+          <td><strong>2023 — наст. время</strong></td>
+          <td>Самостоятельная разработка</td>
+          <td>Медицинские LLM-инструменты, методология, документация</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════ ИНСТРУМЕНТЫ ═══════════ -->
+<section class="section" id="tools">
+  <div class="sec-label">Инструменты</div>
+  <h2 class="sec-title">Что сделано и что в работе</h2>
+  <p class="sec-desc">
+    Инструменты с открытым кодом или готовые к использованию. Никаких серверов, никакой телеметрии.
   </p>
 
-  <div class="hero-meta">
-    <div class="cell">
-      <span class="k">Формат работы</span>
-      <div class="v">Удалённо · текст</div>
+  <article class="artifact live">
+    <div class="artifact-top">
+      <div class="artifact-name">Ассистент клинической коммуникации</div>
+      <span class="artifact-mark dev">В разработке</span>
     </div>
-    <div class="cell">
-      <span class="k">Домены</span>
-      <div class="v">Медицина · методология · LLM</div>
+    <p class="artifact-desc">
+      Интерактивный чек-лист коммуникативных навыков для врача. 102 навыка, сгруппированные в 15 этапов приёма:
+      от начала контакта до завершения консультации. Каждый навык снабжён пояснением — зачем он нужен и как связан
+      с другими этапами. Работает полностью офлайн, в браузере. Прогресс сохраняется локально. Есть экспорт в CSV
+      и криптографический идентификатор сессии на базе SHA-256.
+    </p>
+    <div class="artifact-meta">
+      <span>HTML · офлайн</span>
+      <span>102 навыка</span>
+      <span>15 этапов</span>
+      <span>SHA-256</span>
     </div>
-    <div class="cell">
-      <span class="k">Ответ на письмо</span>
-      <div class="v">В течение дня</div>
+    <div class="artifact-links">
+      <a class="btn small ghost" href="#about-assistant">Подробнее об инструменте</a>
     </div>
-    <div class="cell">
-      <span class="k">Открыт к</span>
-      <div class="v">Интересным задачам</div>
+  </article>
+
+  <article class="artifact live">
+    <div class="artifact-top">
+      <div class="artifact-name">vanxo-tools — коллекция офлайн-утилит</div>
+      <span class="artifact-mark live">Доступен</span>
     </div>
+    <p class="artifact-desc">
+      14 небольших инструментов в одном HTML-файле: счётчик, редактор JSON, вычисление хеша,
+      генератор паролей, работа с цветом, построчный diff и другие. Всё работает локально,
+      без установки, без интернета, без передачи данных.
+    </p>
+    <div class="artifact-meta">
+      <span>HTML · офлайн</span>
+      <span>14 утилит</span>
+      <span>Открытый код</span>
+    </div>
+    <div class="artifact-links">
+      <a class="btn primary small" href="https://github.com/stomvrn/vanxo-tools" target="_blank" rel="noopener">Открыть на GitHub</a>
+    </div>
+  </article>
+
+  <article class="artifact soon">
+    <div class="artifact-top">
+      <div class="artifact-name">Сборник промптов для врача-клинициста</div>
+      <span class="artifact-mark soon">Готовится</span>
+    </div>
+    <p class="artifact-desc">
+      102 промпта для работы с LLM в клинической практике. Разделы: анамнез, дифференциальная диагностика,
+      разбор лабораторных и инструментальных данных, планирование лечения, дозировки, коммуникация с пациентом,
+      документация, обучение, этические ситуации. Формат — PDF, A4.
+    </p>
+    <div class="artifact-meta">
+      <span>PDF</span>
+      <span>102 промпта</span>
+      <span>12 разделов</span>
+    </div>
+  </article>
+
+  <div class="notice accent">
+    <strong>Про открытость.</strong> Все инструменты, которые доступны — с открытым исходным кодом.
+    Код можно проверить, скопировать, использовать. Формулировки навыков и методологические тексты —
+    оригинальные разработки автора.
   </div>
 </section>
 
-<!-- ═══ ABOUT ═══ -->
-<section class="block" id="about">
-  <div class="block-header">
-    <span class="num">01 / О себе</span>
-    <h2>Коротко</h2>
+<!-- ═══════════ ОБ АССИСТЕНТЕ ═══════════ -->
+<section class="section" id="about-assistant">
+  <div class="sec-label">Подробнее</div>
+  <h2 class="sec-title">Об Ассистенте клинической коммуникации</h2>
+  <p class="sec-desc">
+    Инструмент создан для врачей, которые хотят системно подходить к разговору с пациентом — не
+    «интуитивно», а с опорой на структуру.
+  </p>
+
+  <div class="block">
+    <h3>Что внутри</h3>
+    <p>
+      Пятнадцать этапов приёма, каждый из которых разбит на конкретные навыки — от приветствия и
+      представления до резюмирования и прощания. Всего 102 навыка: 60 базовых и 42 расширенных.
+    </p>
+    <p>
+      Каждый навык содержит два блока пояснений: <strong>«Зачем»</strong> — что даёт этот навык, какое
+      исследование или наблюдение за ним стоит; <strong>«Связь»</strong> — как он взаимодействует с
+      другими этапами.
+    </p>
   </div>
-  <div class="prose">
+
+  <div class="block">
+    <h3>Как работает</h3>
     <p>
-      Меня зовут Иван. Мне 48. Я врач-стоматолог с 2001 года — начинал
-      в участковой больнице, последние годы в частной практике. Параллельно
-      с приёмом строю небольшие медицинские инструменты: ассистенты для
-      врачей, системы ведения документации, справочники, обучающие материалы.
+      Открывается в браузере, без установки и без интернета. Прогресс сохраняется локально на устройстве.
+      Сессии можно сохранять, восстанавливать, экспортировать в CSV. Есть идентификатор сессии на базе
+      SHA-256 — он позволяет проверить целостность данных при переносе.
     </p>
     <p>
-      Не программист в классическом смысле. Но с LLM — да, строю: спроектировал
-      структуры, определил границы, ввёл версионирование и контроль целостности.
-      Каждый инструмент — <em>один HTML-файл, работает без интернета, данные
-      не покидают машину</em>.
+      Работает одинаково на компьютере, планшете и телефоне. Поддерживает тёмную и светлую тему.
+      Есть печатная версия — можно распечатать чек-лист для использования на бумаге.
+    </p>
+  </div>
+
+  <div class="block">
+    <h3>Методологическая основа</h3>
+    <p>
+      Инструмент опирается на общепризнанные принципы клинической коммуникации, сформированные в
+      медицинском образовании во второй половине XX века и развитые в 1990-е годы. Эти принципы
+      описывают структуру клинического разговора как последовательность этапов: установление контакта,
+      сбор информации, физикальный осмотр, объяснение, планирование, завершение.
     </p>
     <p>
-      Живу в Острогожске Воронежской области. Работаю в своём ритме.
-      Если задача кажется мне интересной и этичной — берусь.
-      Если нет — скажу прямо.
+      Все формулировки навыков, текстовые пояснения, структура разделов и код приложения —
+      оригинальные, разработаны автором. Прямое заимствование текстов из каких-либо источников
+      отсутствует.
     </p>
+  </div>
+
+  <div class="block">
+    <h3>Юридическая чистота</h3>
+    <p>
+      Инструмент использует общепризнанную методологию клинической коммуникации, которая не является
+      объектом авторского права (идеи, методы, принципы не охраняются). Тексты, дизайн, код —
+      охраняются как произведения автора.
+    </p>
+    <p>
+      Код распространяется под лицензией MIT. Текстовый контент — под лицензией CC BY-NC-SA 4.0.
+      Обе лицензии открытые и позволяют свободное некоммерческое использование с указанием авторства.
+    </p>
+  </div>
+
+  <div class="notice gold">
+    <strong>Ограничения.</strong> Инструмент — образовательный и методологический. Он не заменяет
+    клиническое суждение врача, знание действующих клинических рекомендаций и формальное медицинское
+    образование. Все формулировки носят справочный характер. Клинические решения принимает врач.
   </div>
 </section>
 
-<!-- ═══ WHAT I DO ═══ -->
-<section class="block" id="whatido">
-  <div class="block-header">
-    <span class="num">02 / Чем занимаюсь</span>
-    <h2>Основные направления</h2>
-    <p>
-      Это то, с чем работаю чаще всего. Не единственное, что умею —
-      просто то, где у меня есть что сказать.
-    </p>
-  </div>
+<!-- ═══════════ ПРИНЦИПЫ ═══════════ -->
+<section class="section" id="principles">
+  <div class="sec-label">Принципы</div>
+  <h2 class="sec-title">Как я работаю</h2>
+  <p class="sec-desc">
+    Не требования, не условия. Просто описание подхода, чтобы было понятно, чего ожидать.
+  </p>
 
-  <div class="do-grid">
-    <div class="do-card">
-      <h3>Медицинские инструменты</h3>
-      <p>
-        Ассистенты коммуникации врача, цифровые системы ведения документации,
-        диагностические помощники. Всё автономно — один файл, офлайн, без сервера.
-      </p>
-      <p>
-        От простого скрипта-подсказчика до полноценной системы для клиники.
-      </p>
-    </div>
-
-    <div class="do-card">
-      <h3>Методологии</h3>
-      <p>
-        Разработка процессов, стандартов, чек-листов. Пишу так, чтобы через
-        полгода можно было проверить — работает или нет. С объявленными
-        ограничениями и сценариями, при которых процесс проваливается.
-      </p>
-    </div>
-
-    <div class="do-card">
-      <h3>Экспертиза и аудит</h3>
-      <p>
-        Проверка медицинских текстов, документации, промптов, LLM-инструментов.
-        Отвечаю не оценками, а по пунктам: что работает, что нет, где риск ошибки.
-      </p>
-    </div>
-
-    <div class="do-card">
-      <h3>Тексты и обучение</h3>
-      <p>
-        Медицинские статьи, обучающие материалы, разборы. Материалы
-        по коммуникации врача и пациента — на основе Calgary-Cambridge Guide.
-      </p>
-    </div>
-  </div>
+  <ul class="text-list">
+    <li><strong>Автономность.</strong> Инструменты работают локально. Данные не отправляются на серверы — ни мои, ни пациентские.</li>
+    <li><strong>Прозрачность.</strong> Открытый код, открытые лицензии, открытые декларации ограничений.</li>
+    <li><strong>Явные границы.</strong> В каждом инструменте указано, что он может и чего не может. Без обещаний «всё решить».</li>
+    <li><strong>Медицина не терпит упрощений.</strong> Никаких компромиссов в ущерб точности. Если что-то нельзя объяснить просто и верно — оно объясняется сложно и верно.</li>
+    <li><strong>Долгосрочная перспектива.</strong> Инструменты строятся как долгосрочные системы, а не как одноразовые эксперименты.</li>
+  </ul>
 </section>
 
-<!-- ═══ WORKSHOP ═══ -->
-<section class="block" id="workshop">
-  <div class="block-header">
-    <span class="num">03 / Мастерская</span>
-    <h2>Артефакты</h2>
-    <p>
-      Работы в разной степени готовности. Опубликовано — то, что уже готово.
-      Остальное — по мере завершения. Каждый артефакт с URN и статусом.
-    </p>
-  </div>
+<!-- ═══════════ КОНТАКТЫ ═══════════ -->
+<section class="section" id="contact">
+  <div class="sec-label">Контакты</div>
+  <h2 class="sec-title">Способы связи</h2>
+  <p class="sec-desc">
+    Основной канал — Telegram. Отвечаю лично, в порядке поступления сообщений.
+  </p>
 
-  <div class="workshop-grid">
-
-    <article class="ws">
-      <div class="ws-head">
-        <h3 class="ws-name">vanxo-tools</h3>
-        <span class="ws-ver">v1.0.0</span>
+  <div class="contacts">
+    <a class="contact" href="https://t.me/ivan_kholin_digital" target="_blank" rel="noopener">
+      <div class="contact-mark">✈</div>
+      <div class="contact-body">
+        <div class="contact-label">Telegram</div>
+        <div class="contact-value">@ivan_kholin_digital</div>
       </div>
-      <p class="ws-desc">
-        14 офлайн-утилит в одном HTML-файле. Без внешних зависимостей,
-        без сети, без аккаунтов.
-      </p>
-      <div class="ws-urn">urn:vanxo:artifact:tools:1.0.0</div>
-      <div class="ws-foot">
-        <span class="ws-status">Активен</span>
-        <a class="ws-link" href="https://github.com/stomvrn/vanxo-tools" target="_blank" rel="noopener">github.com/stomvrn/vanxo-tools →</a>
-      </div>
-    </article>
-
-    <article class="ws">
-      <div class="ws-head">
-        <h3 class="ws-name">Compass</h3>
-        <span class="ws-ver">v1.0.0</span>
-      </div>
-      <p class="ws-desc">
-        Точка ориентира. Куда записывать то, что заметил, и куда возвращаться,
-        чтобы найти. Три типа записи. Теги. Поиск.
-      </p>
-      <div class="ws-urn">urn:vanxo:artifact:compass:1.0.0</div>
-      <div class="ws-foot">
-        <span class="ws-status proto">Готовится</span>
-        <span class="ws-link">скоро</span>
-      </div>
-    </article>
-
-    <article class="ws">
-      <div class="ws-head">
-        <h3 class="ws-name">Observer</h3>
-        <span class="ws-ver">v2.0.0</span>
-      </div>
-      <p class="ws-desc">
-        Зеркало. Девять углов взгляда на себя — не оценка, не советы,
-        только наблюдение. Работает офлайн.
-      </p>
-      <div class="ws-urn">urn:vanxo:artifact:observer:2.0.0</div>
-      <div class="ws-foot">
-        <span class="ws-status proto">Готовится</span>
-        <span class="ws-link">скоро</span>
-      </div>
-    </article>
-
-    <article class="ws">
-      <div class="ws-head">
-        <h3 class="ws-name">Calgary-Cambridge Assistant</h3>
-        <span class="ws-ver">v3.2</span>
-      </div>
-      <p class="ws-desc">
-        Ассистент коммуникации врача. 102 навыка, 15 этапов консультации,
-        разбор сложных случаев. На основе Calgary-Cambridge Guide.
-      </p>
-      <div class="ws-urn">urn:vanxo:artifact:calgary-cambridge:3.2.0</div>
-      <div class="ws-foot">
-        <span class="ws-status proto">Готовится</span>
-        <span class="ws-link">скоро</span>
-      </div>
-    </article>
-
-    <article class="ws">
-      <div class="ws-head">
-        <h3 class="ws-name">Meta-Methodology</h3>
-        <span class="ws-ver">v1.1.0</span>
-      </div>
-      <p class="ws-desc">
-        Методология построения методологий. 8 фаз, 8 критериев качества,
-        валидатор рисков. Сама себя проверяет.
-      </p>
-      <div class="ws-urn">urn:vanxo:artifact:meta-methodology:1.1.0</div>
-      <div class="ws-foot">
-        <span class="ws-status proto">Готовится</span>
-        <span class="ws-link">скоро</span>
-      </div>
-    </article>
-
-    <article class="ws">
-      <div class="ws-head">
-        <h3 class="ws-name">РОД</h3>
-        <span class="ws-ver">v1.7.0</span>
-      </div>
-      <p class="ws-desc">
-        Цифровой архив родословной. Проверяемая целостность данных,
-        хеш-цепочка, роль Хранителя. Личный проект.
-      </p>
-      <div class="ws-urn">urn:vanxo:artifact:rod:1.7.0</div>
-      <div class="ws-foot">
-        <span class="ws-status draft">Личное</span>
-        <span class="ws-link">не публикуется</span>
-      </div>
-    </article>
-
-  </div>
-
-  <div style="margin-top:26px;padding:16px 20px;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--ac);border-radius:var(--rs);font-size:14px;color:var(--dim);line-height:1.7">
-    <strong style="color:var(--ink)">Всего в экосистеме — более 40 артефактов.</strong>
-    Здесь — те, что уже доступны или готовятся к публикации.
-    Остальное — по мере завершения. Спешки нет.
-  </div>
-</section>
-
-<!-- ═══ PRINCIPLES ═══ -->
-<section class="block" id="principles">
-  <div class="block-header">
-    <span class="num">04 / Принципы</span>
-    <h2>Как работаю</h2>
-    <p>
-      Не условия. Не требования. Просто то, как я устроен —
-      чтобы было понятно, стоит ли начинать разговор.
-    </p>
-  </div>
-
-  <div class="principles">
-    <div class="principle">
-      <div class="n">01</div>
-      <div class="b">
-        <div class="t">Работаю с интересом</div>
-        <p class="d">
-          Если задача кажется осмысленной — берусь всерьёз. Если нет —
-          скажу прямо. Это не отказ от трудного, а отказ от того,
-          где я не буду полезен.
-        </p>
-      </div>
-    </div>
-
-    <div class="principle">
-      <div class="n">02</div>
-      <div class="b">
-        <div class="t">Этика — не формальность</div>
-        <p class="d">
-          Есть вещи, за которые не возьмусь независимо от денег.
-          Работа с детьми без специализации, манипуляции с медицинскими
-          данными, проекты, где нужно сознательно исказить что-то важное.
-        </p>
-      </div>
-    </div>
-
-    <div class="principle">
-      <div class="n">03</div>
-      <div class="b">
-        <div class="t">Текст, а не созвоны</div>
-        <p class="d">
-          Формулирую точнее в письме, чем голосом. Предпочитаю почту,
-          Telegram, чат. Если для дела нужен голосовой контакт —
-          предложу, но в обычной работе он не нужен.
-        </p>
-      </div>
-    </div>
-
-    <div class="principle">
-      <div class="n">04</div>
-      <div class="b">
-        <div class="t">Свой ритм</div>
-        <p class="d">
-          Не работаю по расписанию. Могу ответить вечером или утром,
-          могу молчать весь день — если работаю в этот момент. Дедлайн
-          соблюдаю, но распределяю время сам.
-        </p>
-      </div>
-    </div>
-
-    <div class="principle">
-      <div class="n">05</div>
-      <div class="b">
-        <div class="t">Честность про ограничения</div>
-        <p class="d">
-          Если чего-то не знаю — скажу. Если есть риск — объявлю заранее,
-          не в конце. Если не смогу довести — предупрежу с самого начала.
-        </p>
-      </div>
-    </div>
-
-    <div class="principle">
-      <div class="n">06</div>
-      <div class="b">
-        <div class="t">Локально, а не в облаке</div>
-        <p class="d">
-          Данные — у владельца. Инструменты работают без интернета.
-          Никаких аккаунтов, никакой регистрации, никаких чужих серверов,
-          если речь о чувствительной информации.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ LICENSE ═══ -->
-<section class="block" id="license">
-  <div class="block-header">
-    <span class="num">05 / Лицензия</span>
-    <h2>Как можно использовать</h2>
-  </div>
-
-  <div class="license-box">
-    <h3>MIT License</h3>
-    <p>
-      Весь код в этой мастерской распространяется под лицензией <code>MIT</code>.
-      Короткая формулировка: <strong>можно всё</strong>, при условии, что
-      сохранён копирайт автора в исходных файлах.
-    </p>
-    <p>
-      <strong>Разрешено:</strong> использовать, изучать, изменять,
-      распространять, включать в коммерческие продукты, перепродавать.
-    </p>
-    <p>
-      <strong>Условие:</strong> сохранить в исходнике уведомление о копирайте
-      и текст лицензии.
-    </p>
-    <p>
-      <strong>Ответственность:</strong> автор не несёт. Продукт «as is».
-      Для медицинских артефактов — дополнительно этическая рамка в каждом файле.
-    </p>
-    <p style="margin-top:14px">
-      Отдельный вопрос — метод. MIT защищает код, но не защищает методологию.
-      Если ты берёшь подход целиком и выдаёшь за свой — это уже не про лицензию,
-      это про совесть. Я предпочитаю говорить об этом прямо.
-    </p>
-  </div>
-</section>
-
-<!-- ═══ CONTACT ═══ -->
-<section class="block" id="contact">
-  <div class="block-header">
-    <span class="num">06 / Контакты</span>
-    <h2>Написать</h2>
-    <p>
-      Отвечаю в течение дня. Если задача заинтересует — обсудим.
-      Если нет — скажу прямо, не буду тянуть.
-    </p>
-  </div>
-
-  <div class="contact-grid">
-    <a class="contact-card" href="mailto:stom.vrn@gmail.com">
-      <span class="label">Электронная почта</span>
-      <span class="value">stom.vrn@gmail.com</span>
-      <span class="hint">Предпочтительный канал · отвечаю в течение дня</span>
     </a>
 
-    <a class="contact-card" href="https://t.me/ivan_kholin_digital" target="_blank" rel="noopener">
-      <span class="label">Telegram</span>
-      <span class="value">@ivan_kholin_digital</span>
-      <span class="hint">Для быстрых сообщений</span>
+    <a class="contact" href="https://github.com/stomvrn" target="_blank" rel="noopener">
+      <div class="contact-mark">◆</div>
+      <div class="contact-body">
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value">github.com/stomvrn</div>
+      </div>
     </a>
 
-    <a class="contact-card" href="https://github.com/stomvrn" target="_blank" rel="noopener">
-      <span class="label">GitHub</span>
-      <span class="value">github.com/stomvrn</span>
-      <span class="hint">Публичные артефакты и код</span>
-    </a>
+    <div class="contact" style="cursor:default">
+      <div class="contact-mark">✉</div>
+      <div class="contact-body">
+        <div class="contact-label">E-mail</div>
+        <div class="contact-value">по запросу в Telegram</div>
+      </div>
+    </div>
 
-    <a class="contact-card" href="https://boosty.to/vanxo" target="_blank" rel="noopener">
-      <span class="label">Boosty</span>
-      <span class="value">boosty.to/vanxo</span>
-      <span class="hint">Для тех, кто хочет поддержать работу</span>
-    </a>
-  </div>
-</section>
-
-<!-- ═══ RISKS ═══ -->
-<section class="block" id="risks">
-  <div class="block-header">
-    <span class="num">07 / Границы</span>
-    <h2>Чего здесь нет</h2>
-    <p>
-      Каждый артефакт объявляет свои residual risks в meta-теге. Эта страница —
-      не исключение. Ниже — то, чего здесь не хватает или что может пойти не так.
-    </p>
+    <div class="contact" style="cursor:default">
+      <div class="contact-mark">☏</div>
+      <div class="contact-body">
+        <div class="contact-label">Телефон</div>
+        <div class="contact-value">по запросу в Telegram</div>
+      </div>
+    </div>
   </div>
 
-  <div class="risk-list">
-    <div class="risk-row">
-      <div class="rid">W-R320 · boundary</div>
-      <div class="rbody">Страница статичная. Никаких форм обратной связи, никаких серверов. Всё — через почту и Telegram.</div>
-    </div>
-    <div class="risk-row">
-      <div class="rid">W-R321 · open</div>
-      <div class="rbody">Контактные каналы публичные. Со временем собирают спам. Если станет проблемой — заведу отдельный ящик для рабочих писем.</div>
-    </div>
-    <div class="risk-row">
-      <div class="rid">W-R322 · boundary</div>
-      <div class="rbody">Артефакты описаны, но не хостятся здесь целиком. Ссылки ведут на GitHub, где живёт код и документация.</div>
-    </div>
-    <div class="risk-row">
-      <div class="rid">W-R323 · open</div>
-      <div class="rbody">Аналитики нет. Никаких трекеров, никаких счётчиков. Это сознательный выбор — ценой того, что я не вижу, что работает.</div>
-    </div>
-    <div class="risk-row">
-      <div class="rid">W-R324 · boundary</div>
-      <div class="rbody">MIT защищает код, но не метод. Если кто-то возьмёт методологию без указания автора — юридически придраться не к чему. Этика — не юрисдикция.</div>
-    </div>
+  <div class="notice green">
+    <strong>По вопросам сотрудничества.</strong> Открыт к проектной работе, частичной и полной занятости,
+    удалённо. Официальное оформление: трудовой договор, ГПХ, самозанятость. Тематики — медицинский
+    методология, промпт-инжиниринг, техническая документация, аудит LLM-инструментов.
   </div>
 </section>
 
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="foot-row">
-      <div>
-        <div>Иван Холин · врач · методолог · LLM</div>
-        <div style="margin-top:4px">Острогожск, Воронежская область · удалённо</div>
-      </div>
-      <div style="text-align:right">
-        <div><code>urn:vanxo:artifact:workshop:1.0.0</code></div>
-        <div style="margin-top:4px">MIT · 2026-10-04</div>
-      </div>
-    </div>
-    <div class="sign">
-      Один HTML-файл. Работает без интернета. Никаких трекеров, никакой аналитики,
-      никаких сторонних сервисов. Если эта страница открылась у вас — она лежит
-      целиком у вас в браузере.
-    </div>
-  </div>
+<footer class="foot">
+  <div>© 2026 Иван Холин · Острогожск, Воронежская область</div>
+  <div>stomvrn.github.io</div>
 </footer>
 
+</div>
+
 <script>
-"use strict";
 (function(){
-  var THEME_KEY = 'vanxo-workshop-theme';
+  'use strict';
+  var KEY = 'vx_site_theme';
+  var btn = document.getElementById('themeBtn');
+  var meta = document.getElementById('metaThemeColor');
 
-  function applyTheme(t){
-    document.documentElement.setAttribute('data-theme', t);
-    var m = document.querySelector('meta[name="theme-color"]');
-    if(m) m.content = t === 'light' ? '#f4f6fc' : '#0a0e14';
-    try { localStorage.setItem(THEME_KEY, t); } catch(e){}
+  function apply(name){
+    document.documentElement.setAttribute('data-theme', name);
+    if(meta) meta.setAttribute('content', name === 'dark' ? '#0a0e14' : '#fafbfc');
+    if(btn) btn.textContent = name === 'dark' ? '🌓' : '☀️';
   }
 
-  function initTheme(){
-    var t = 'dark';
-    try {
-      var stored = localStorage.getItem(THEME_KEY);
-      if(stored) t = stored;
-      else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)
-        t = 'light';
-    } catch(e){}
-    applyTheme(t);
+  function load(){
+    var saved = 'dark';
+    try{ saved = localStorage.getItem(KEY) || 'dark'; }catch(e){}
+    if(saved === 'auto'){
+      var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      saved = prefersLight ? 'light' : 'dark';
+    }
+    apply(saved);
   }
 
-  document.getElementById('themeBtn').addEventListener('click', function(){
-    var cur = document.documentElement.getAttribute('data-theme');
-    applyTheme(cur === 'dark' ? 'light' : 'dark');
-  });
+  function toggle(){
+    var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+    var next = cur === 'dark' ? 'light' : 'dark';
+    apply(next);
+    try{ localStorage.setItem(KEY, next); }catch(e){}
+  }
 
+  if(btn) btn.addEventListener('click', toggle);
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', load);
+  } else {
+    load();
+  }
+
+  // Плавная прокрутка к якорям
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click', function(e){
-      var id = a.getAttribute('href').slice(1);
-      var el = document.getElementById(id);
-      if(el){
-        e.preventDefault();
-        var top = el.getBoundingClientRect().top + window.pageYOffset - 70;
-        window.scrollTo({ top: top, behavior: 'smooth' });
-      }
+      var id = a.getAttribute('href');
+      if(id.length < 2) return;
+      var target = document.querySelector(id);
+      if(!target) return;
+      e.preventDefault();
+      var top = target.getBoundingClientRect().top + window.pageYOffset - 16;
+      window.scrollTo({top: top, behavior: 'smooth'});
+      history.replaceState(null, '', id);
     });
   });
-
-  initTheme();
-  console.log('Мастерская · urn:vanxo:artifact:workshop:1.0.0 · CANONICAL');
 })();
 </script>
-
 </body>
 </html>
