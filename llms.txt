@@ -1,0 +1,46 @@
+# Иван Холин · VanXo
+
+> Врач-стоматолог, 25 лет практики. Справочно-образовательные офлайн-инструменты. Не медизделие.
+
+URN: urn:vanxo:artifact:portfolio:2.0.0
+Демо: https://stomvrn.github.io/
+Репозиторий: https://github.com/stomvrn/stomvrn.github.io
+Профиль: https://github.com/stomvrn/stomvrn
+Лицензия: CC BY 4.0
+
+## Что это
+
+Портфолио врача-стоматолога, который разрабатывает single-file HTML-инструменты. Оформлено как форма № 043/у (медицинская карта стоматологического больного).
+
+Справочно-образовательный артефакт. Не медизделие. Не предназначен для диагностики, лечения или клинических решений.
+
+## Артефакты
+
+- [Emergency Help](https://stomvrn.github.io/emergency-help/): 16 карточек (14 алгоритмов + 2 справки). CC0. Не медизделие.
+- [LLM Cheatsheet](https://stomvrn.github.io/stomvrn-llm-cheatsheet/): 24 плитки, 5 разделов. CC BY 4.0.
+- [Medical Kit](https://stomvrn.github.io/medical-kit/): 9 клинических шкал, 102 навыка. CC BY 4.0. Не медизделие.
+- [Clinical Communication](https://stomvrn.github.io/clinical-communication-assistant/): 15 этапов, 102 навыка. CC BY 4.0.
+- [vanxo-tools](https://stomvrn.github.io/vanxo-tools/): 14 утилит. CC0.
+
+## Принципы
+
+- Offline-first
+- Single-file
+- Zero dependencies
+- Strict CSP (connect-src 'none')
+- No tracking
+- Local-only
+- Открытая лицензия (CC0 / CC BY 4.0)
+- URN-идентификация
+
+## Связи
+
+- GitHub: https://github.com/stomvrn
+- ORCID: https://orcid.org/0009-0005-7588-989X
+- Telegram: https://t.me/ivan_kholin_digital
+
+## Дисклеймер
+
+Not a medical device. For educational and reference use only. Not intended for diagnosis, treatment, or clinical decision-making.
+
+152-ФЗ. Do not enter personally identifiable patient information.
